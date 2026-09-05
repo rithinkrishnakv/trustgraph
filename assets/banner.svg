@@ -1,0 +1,84 @@
+<svg viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="TrustGraph — evidence-first software provenance">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#14181a"/>
+      <stop offset="100%" stop-color="#1c211f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2f6e4e" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#2f6e4e" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="300" fill="url(#bg)"/>
+
+  <!-- faint technical grid, restrained -->
+  <g stroke="#2a2f2c" stroke-width="1" opacity="0.5">
+    <path d="M0 60 H1200 M0 120 H1200 M0 180 H1200 M0 240 H1200"/>
+    <path d="M100 0 V300 M300 0 V300 M500 0 V300 M700 0 V300 M900 0 V300 M1100 0 V300"/>
+  </g>
+
+  <circle cx="860" cy="150" r="170" fill="url(#glow)"/>
+
+  <!-- Wordmark, tied to the same serif used in the app UI -->
+  <text x="60" y="140" font-family="'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif"
+        font-size="64" fill="#f3f4f1" font-weight="600" letter-spacing="-0.5">TrustGraph</text>
+  <text x="62" y="178" font-family="'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif"
+        font-size="21" fill="#9aa39c">Evidence-first software provenance and supply-chain intelligence.</text>
+  <text x="62" y="210" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace"
+        font-size="14" fill="#6b746e">npm publisher continuity · cryptographic provenance · absence ≠ failure</text>
+
+  <!-- Abstract provenance graph, right side: Package, Attestation, Repository,
+       with a Publisher node off to the side. Structure echoes the real pipeline,
+       rendered abstractly rather than as a literal flowchart. -->
+  <g font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="12">
+
+    <!-- edges -->
+    <g stroke-width="1.6" fill="none">
+      <path id="edge1" d="M 700 150 C 760 150, 770 90, 830 90" stroke="#3a423d"/>
+      <path id="edge2" d="M 830 90 C 900 90, 900 150, 960 150" stroke="#3a423d"/>
+      <path id="edge3" d="M 700 150 C 760 150, 770 210, 830 210" stroke="#3a423d"/>
+    </g>
+
+    <!-- traveling evidence packet along edge1 -> edge2 (package -> attestation -> repository) -->
+    <circle r="4" fill="#2f6e4e">
+      <animateMotion dur="4s" repeatCount="indefinite"
+        path="M 700 150 C 760 150, 770 90, 830 90 C 900 90, 900 150, 960 150"/>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="4s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- second, offset packet toward the weaker-evidence node, in the mauve tier color -->
+    <circle r="3.5" fill="#8a5a6b">
+      <animateMotion dur="5.5s" begin="0.6s" repeatCount="indefinite"
+        path="M 700 150 C 760 150, 770 210, 830 210"/>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="5.5s" begin="0.6s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Package node -->
+    <circle cx="700" cy="150" r="22" fill="#1c211f" stroke="#f3f4f1" stroke-width="1.5"/>
+    <circle cx="700" cy="150" r="22" fill="none" stroke="#2f6e4e" stroke-width="1.5" opacity="0.6">
+      <animate attributeName="opacity" values="0.25;0.7;0.25" dur="3.2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="700" y="185" text-anchor="middle" fill="#9aa39c">package</text>
+
+    <!-- Attestation node (provenance verification ring completing) -->
+    <circle cx="830" cy="90" r="18" fill="#1c211f" stroke="#f3f4f1" stroke-width="1.5"/>
+    <circle cx="830" cy="90" r="25" fill="none" stroke="#2f6e4e" stroke-width="2"
+            stroke-dasharray="157" stroke-dashoffset="157" stroke-linecap="round" transform="rotate(-90 830 90)">
+      <animate attributeName="stroke-dashoffset" values="157;0;0;157" keyTimes="0;0.45;0.8;1" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <text x="830" y="60" text-anchor="middle" fill="#9aa39c">attestation</text>
+
+    <!-- Repository node -->
+    <circle cx="960" cy="150" r="20" fill="#1c211f" stroke="#f3f4f1" stroke-width="1.5"/>
+    <circle cx="960" cy="150" r="20" fill="none" stroke="#2f6e4e" stroke-width="1.5" opacity="0.5">
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3.2s" begin="0.9s" repeatCount="indefinite"/>
+    </circle>
+    <text x="960" y="185" text-anchor="middle" fill="#9aa39c">repository</text>
+
+    <!-- Publisher / identity node, deliberately abstract (a small diamond, not a person icon),
+         weak-tier color to echo self-reported-identity being the weakest evidence class -->
+    <rect x="822" y="202" width="16" height="16" fill="#1c211f" stroke="#8a5a6b" stroke-width="1.5" transform="rotate(45 830 210)"/>
+    <text x="830" y="240" text-anchor="middle" fill="#7a746f">publisher</text>
+  </g>
+</svg>

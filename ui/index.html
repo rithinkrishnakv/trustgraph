@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TrustGraph</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>TrustGraph</h1>
+      <p class="tagline">Publisher and provenance evidence for npm packages.</p>
+    </div>
+  </header>
+
+  <main class="content">
+    <section class="scan-panel">
+      <form id="scan-form">
+        <label for="package-input">npm package name</label>
+        <div class="scan-row">
+          <input id="package-input" name="package" type="text" placeholder="left-pad" autocomplete="off" spellcheck="false" required />
+          <button type="submit" id="scan-button">Scan</button>
+        </div>
+      </form>
+      <p id="scan-status" class="scan-status" aria-live="polite"></p>
+    </section>
+
+    <section id="results"></section>
+  </main>
+
+  <footer class="colophon">
+    <p>
+      TrustGraph reports what is publicly checkable about an npm package's publishing history. It does not detect
+      compromise, and its absence of findings is not a guarantee of safety. See the
+      <a href="/api/v1/packages/example/findings">API</a> or the project README for what this tool can and cannot establish.
+    </p>
+  </footer>
+
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
