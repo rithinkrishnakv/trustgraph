@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.png" alt="TrustGraph — evidence-first software provenance" width="100%" />
+  <img src="assets/Banner.png" alt="TrustGraph — evidence-first software provenance" width="100%" />
 </p>
 
 <h3 align="center">Evidence-first software provenance and supply-chain intelligence.</h3>
