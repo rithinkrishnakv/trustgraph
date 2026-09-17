@@ -2,14 +2,22 @@
   <img src="assets/banner.png" alt="TrustGraph — evidence-first software provenance" width="100%" />
 </p>
 
-<h3 align="center">Evidence-first software provenance and supply-chain intelligence.</h3>
-
 <p align="center">
-  <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-5.6-3178c6?logo=typescript&logoColor=white" alt="TypeScript 5.6"></a>
-  <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/node-%3E%3D20-339933?logo=node.js&logoColor=white" alt="Node >=20"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT License"></a>
-  <a href="https://github.com/rithinkrishnakv/trustgraph/actions/workflows/ci.yml"><img src="https://github.com/rithinkrishnakv/trustgraph/actions/workflows/ci.yml/badge.svg" alt="CI status"></a>
+  <a href="https://www.typescriptlang.org/">
+    <img src="https://img.shields.io/badge/TypeScript-5.6-173B8F?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript 5.6">
+  </a>
+  <a href="https://nodejs.org/">
+    <img src="https://img.shields.io/badge/node-%3E%3D20-173B8F?style=for-the-badge&logo=node.js&logoColor=white" alt="Node >=20">
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-173B8F?style=for-the-badge" alt="MIT License">
+  </a>
+  <a href="https://github.com/rithinkrishnakv/trustgraph/actions/workflows/ci.yml">
+    <img src="https://img.shields.io/badge/CI-passing-173B8F?style=for-the-badge&logo=github&logoColor=white" alt="CI status">
+  </a>
 </p>
+
+<h3 align="center">Evidence-first software provenance and supply-chain intelligence.</h3>
 
 <!--
   This badge will show "no status" until the repo is pushed and the CI
